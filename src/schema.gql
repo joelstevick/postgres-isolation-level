@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Stats {
+  id: Int!
+  value: Int!
+}
+
+type Query {
+  stats: Stats!
+}
+
+type Mutation {
+  runTransactionReadCommitted: Stats!
+  runTransactionRepeatableRead: Stats!
+}
