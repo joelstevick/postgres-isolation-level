@@ -24,8 +24,7 @@ export class StatsService {
                 await getConnection().transaction(IsolationLevel, async transactionalEntityManager => {
 
                     // read the test record in the first transaction and update its value
-                    let stats: Stats;
-                    stats = await transactionalEntityManager.findOne(Stats, TEST_RECORD_ID);
+                    const stats = await transactionalEntityManager.findOne(Stats, TEST_RECORD_ID);
 
                     stats.value++;
 
