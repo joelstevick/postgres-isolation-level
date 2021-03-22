@@ -9,7 +9,7 @@ export enum IsolationLevel {
     RepeatableRead = 'REPEATABLE READ'
 }
 
-const TEST_RECORD_ID = 1
+export const TEST_RECORD_ID = 1
 @Injectable()
 export class StatsService {
     

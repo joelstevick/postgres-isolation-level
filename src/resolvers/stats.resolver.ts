@@ -1,6 +1,6 @@
 import { Mutation, Query, Resolver } from "@nestjs/graphql";
 import { Stats } from "src/models/stats.entity";
-import { IsolationLevel, StatsService } from "src/services/stats/stats.service";
+import { IsolationLevel, StatsService, TEST_RECORD_ID } from "src/services/stats/stats.service";
 
 @Resolver((of) => Stats)
 export class StatsResolver {
@@ -10,7 +10,7 @@ export class StatsResolver {
     @Query(() => Stats)
     async stats(): Promise<Stats> {
 
-        return { id: 1, value: 0};
+       return this.statsService.findTestRecord();
     }
 
     @Mutation(returns => Stats)
